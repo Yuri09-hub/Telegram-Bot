@@ -10,7 +10,7 @@ response_dict = response.json()
 response = requests.get(link)
 
 
-#print(response_dict)
+
 
 def get_description_climate():
     response_dict = response.json()
@@ -25,6 +25,6 @@ def get_climate():
 
     temperature = response_dict["main"]["temp"] - 273.15
 
-    return f"{temperature}°C"
+    return f"{temperature:.2f}°C"
 
 print(get_climate())

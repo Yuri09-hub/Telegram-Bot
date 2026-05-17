@@ -13,7 +13,7 @@ bot = telebot.TeleBot(str(API_KEY))
 
 @bot.message_handler(commands=['option1'])
 def option1(message):
-    bot.send_message(message.chat.ia,
+    bot.reply_to(message,
     "my creator name is Yuri Rodrigues. He is trying to learn programming with the help of a guy named Jocelino. ")
 
 

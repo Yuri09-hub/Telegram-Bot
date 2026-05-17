@@ -1,28 +1,39 @@
-
+from climate import get_description_climate, get_climate
 import telebot
 from dotenv import load_dotenv
 import os
 load_dotenv()
 from datetime import datetime
+
 API_KEY = os.getenv("CHAVE_API")
-
-
 
 bot = telebot.TeleBot(str(API_KEY))
 
-def help_response():
-    text = """
-    /time - what time is it
-    / 
-    """
+@bot.message_handler(commands=['option1'])
+def option1():
+    ...
+
+@bot.message_handler(commands=['option2'])
+def option2():
+    ...
+
+@bot.message_handler(commands=['option3'])
+def option3():
+    ...
+
+
+def verify(message):
+    return True
 
 @bot.message_handlers(commands=['start'])
 def response(res):
-    bot.reply_to(res," Hi, I'm Yuri Bot")
-
-@bot.message_handler(commands=['help'])
-def help(message):
-    bot.reply_to(message," Hi, I'm Yuri Bot")
+    text = """
+        /option1 - who i am 
+        /option2 - date 
+        /option3 - temperature
+        Replying with something else won't work.
+        """
+    bot.reply_to(res,text)
 
 
 bot.polling()

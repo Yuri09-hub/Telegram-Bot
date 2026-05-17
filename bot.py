@@ -5,6 +5,7 @@ import os
 load_dotenv()
 from datetime import datetime
 
+
 API_KEY = os.getenv("CHAVE_API")
 
 bot = telebot.TeleBot(str(API_KEY))

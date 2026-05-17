@@ -1,6 +1,6 @@
 import requests
 
-API_CLIMATE = "861842146dddf40be6a1cb1b551705e2"
+
 city_name = "Luanda"
 link = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_CLIMATE}&lang=pt_br"
 response = requests.get(link)

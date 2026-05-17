@@ -1,5 +1,10 @@
 import requests
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+API_CLIMATE = os.getenv("API_CLIMATE")
 
 city_name = "Luanda"
 link = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_CLIMATE}&lang=pt_br"
@@ -7,6 +12,8 @@ response = requests.get(link)
 response_dict = response.json()
 
 response = requests.get(link)
+
+
 
 
 def get_description_climate():

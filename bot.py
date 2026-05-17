@@ -37,7 +37,7 @@ def option3(message):
 def verify(message):
     return True
 
-@bot.message_handlers(func=verify)
+@bot.message_handler(func=verify)
 def response(res):
     text = """
         /option1 - who i am 
